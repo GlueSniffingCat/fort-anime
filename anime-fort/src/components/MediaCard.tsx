@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface Props {
 	id: number;
 	type: string;
@@ -8,12 +9,31 @@ interface Props {
 const MediaCard = ({ id, type, links, attributes }: Props) => {
 	return (
 		<div>
-			<img src={attributes.posterImage.original} alt="poster" />
-			<p>{id}</p>
-			<p>{type}</p>
-			<p>{links.self}</p>
-			<p>{attributes.titles.en}</p>
-			<p>{attributes.description}</p>
+			<div className="relative h-64">
+				<Image
+					layout="fill"
+					objectFit="cover"
+					src={attributes.coverImage?.tiny}
+					alt={attributes.canonicalTitle}
+				/>
+			</div>
+			<div>
+				<div>
+					<h2>{attributes.canonicalTitle}</h2>
+					<p>
+						{attributes.ageRating}-{attributes.ageRatingGuide}/
+						{attributes.startDate}/{},
+					</p>
+				</div>
+				<div>
+					<div>
+						<h3>Summary</h3>
+						<p>{}</p>
+					</div>
+					<p>{attributes.synopsis}</p>
+				</div>
+				<div></div>
+			</div>
 			{/* render links and attributes */}
 		</div>
 	);

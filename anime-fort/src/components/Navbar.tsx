@@ -12,37 +12,50 @@ export default function Navbar() {
 
 	return (
 		<div className="flex justify-between items-center">
-			<nav className="flex gap-[1.5rem] p-[10px] border-red border-2 rounded-lg [&>*]:rounded-md bg-black [&>*]:py-[0.875rem] [&>*]:px-[1.5rem] text-white [&>*]:block">
+			<nav className="hidden md:flex items-center gap-[1.5rem] p-[10px] border-red border-2 rounded-lg [&>*]:rounded-md bg-black [&>*]:py-[0.5rem] [&>*]:px-[1.5rem] text-white/75 [&>*]:block">
 				<Link
-					className={`${pathname === "/" ? "bg-black10" : ""}`}
+					className={`${
+						pathname === "/" ? "bg-black10 text-white" : ""
+					} hover:bg-black10`}
 					href="/"
 				>
 					Home
 				</Link>
 				<Link
 					className={`${
-						pathname === "/movies_and_shows" ? "bg-black10" : ""
-					}`}
+						pathname === "/movies_and_shows"
+							? "bg-black10 text-white"
+							: ""
+					} hover:bg-black10`}
 					href="/movies_and_shows"
 				>
 					Movies & Shows
 				</Link>
 				<Link
-					className={`${pathname === "/support" ? "bg-black10" : ""}`}
+					className={`${
+						pathname === "/support" ? "bg-black10 text-white" : ""
+					} hover:bg-black10`}
 					href="/support"
 				>
 					Support
 				</Link>
 				<Link
 					className={`${
-						pathname === "/subscriptions" ? "bg-black10" : ""
-					}`}
+						pathname === "/subscriptions"
+							? "bg-black10 text-white"
+							: ""
+					} hover:bg-black10`}
 					href="/subscriptions"
 				>
 					Subscriptions
 				</Link>
 			</nav>
-			<div className=" flex justify-between min-h-[32px] min-w-[100px]">
+			<button className="[&>*]:min-h-[1px] [&>*]:bg-white group [&>*]:transition-transform [&>*]:duration-300">
+				<div className="min-w-[40px] scale-x-0 group-hover:scale-x-100"></div>
+				<div className="my-2 scale-x-50 origin-right group-hover:scale-x-100"></div>
+				<div className="scale-x-50 origin-left group-hover:scale-x-100"></div>
+			</button>
+			<div className="flex gap-[1.875rem]">
 				<div>
 					<FontAwesomeIcon
 						icon={faBell}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "../components/Navbar";
+
 const manrope = Manrope({
 	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
@@ -19,7 +21,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${manrope.className} text-sm bg-[#1E1E1E]`}>
+			<body
+				className={`${manrope.className} xl:py-[2rem] xl:px-[10.125rem] lg:py-[1.5rem] lg:px-[5rem] py-[2.5rem] px-[1rem] text-sm md:text-lg lg:text-xl xl:text-2xl bg-[#1E1E1E] `}
+			>
+				<Navbar />
 				{children}
 			</body>
 		</html>

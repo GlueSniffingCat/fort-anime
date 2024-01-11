@@ -50,7 +50,7 @@ export default function Navbar() {
 					Subscriptions
 				</Link>
 			</nav>
-			<button className="[&>*]:min-h-[1px] [&>*]:bg-white group [&>*]:transition-transform [&>*]:duration-300">
+			<button className=" md:hidden [&>*]:min-h-[1px] [&>*]:bg-white group [&>*]:transition-transform [&>*]:duration-300">
 				<div className="min-w-[40px] scale-x-0 group-hover:scale-x-100"></div>
 				<div className="my-2 scale-x-50 origin-right group-hover:scale-x-100"></div>
 				<div className="scale-x-50 origin-left group-hover:scale-x-100"></div>
